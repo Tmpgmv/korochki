@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Май 07 2026 г., 10:53
+-- Время создания: Май 07 2026 г., 11:02
 -- Версия сервера: 10.6.20-MariaDB-ubu2004
 -- Версия PHP: 8.2.27
 
@@ -24,7 +24,18 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Структура таблицы `User`
+-- Структура таблицы `course`
+--
+
+CREATE TABLE `course` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `user`
 --
 
 CREATE TABLE `user` (
@@ -42,7 +53,13 @@ CREATE TABLE `user` (
 --
 
 --
--- Индексы таблицы `User`
+-- Индексы таблицы `course`
+--
+ALTER TABLE `course`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Индексы таблицы `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
@@ -53,7 +70,13 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT для таблицы `User`
+-- AUTO_INCREMENT для таблицы `course`
+--
+ALTER TABLE `course`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
