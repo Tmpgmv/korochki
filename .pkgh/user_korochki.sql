@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Май 07 2026 г., 15:21
+-- Время создания: Май 07 2026 г., 17:31
 -- Версия сервера: 10.6.20-MariaDB-ubu2004
 -- Версия PHP: 8.2.27
 
@@ -33,7 +33,7 @@ CREATE TABLE `app` (
   `course_id` int(11) NOT NULL,
   `start` date NOT NULL,
   `pament_option` set('Наличными','СБП') NOT NULL DEFAULT 'Наличными',
-  `status` set('Новая','Идет обучение', 'Обучение завершено') NOT NULL DEFAULT 'Новая',
+  `status` set('Новая','Идет обучение','Обучение завершено') NOT NULL DEFAULT 'Новая',
   `feedback` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -47,6 +47,15 @@ CREATE TABLE `course` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Дамп данных таблицы `course`
+--
+
+INSERT INTO `course` (`id`, `name`) VALUES
+(1, 'Основы алгоритмизации и программирования'),
+(2, 'Основы веб-дизайна'),
+(3, 'Основы проектирования баз данных');
 
 -- --------------------------------------------------------
 
@@ -112,7 +121,7 @@ ALTER TABLE `app`
 -- AUTO_INCREMENT для таблицы `course`
 --
 ALTER TABLE `course`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT для таблицы `user`
