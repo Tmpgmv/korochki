@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Май 07 2026 г., 11:12
+-- Время создания: Май 07 2026 г., 15:21
 -- Версия сервера: 10.6.20-MariaDB-ubu2004
 -- Версия PHP: 8.2.27
 
@@ -61,8 +61,17 @@ CREATE TABLE `user` (
   `full_name` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `admin` tinytext NOT NULL DEFAULT '0'
+  `admin` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Дамп данных таблицы `user`
+--
+
+INSERT INTO `user` (`id`, `username`, `password`, `full_name`, `phone`, `email`, `admin`) VALUES
+(1, 'user', 'user', 'Пользователь', '8(999)999-99-99', 'user@user.ru', 0),
+(2, 'user1', 'user1', 'Пользователь', '8(888)888-88-88', 'user1@user1.ru', 0),
+(3, 'Admin', 'KorokNET', 'Администратор', '8(777)777-77-77', 'admin@admin.ru', 1);
 
 --
 -- Индексы сохранённых таблиц
@@ -109,7 +118,7 @@ ALTER TABLE `course`
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Ограничения внешнего ключа сохраненных таблиц
