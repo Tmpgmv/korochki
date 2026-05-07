@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Структура таблицы `User`
 --
 
-CREATE TABLE `User` (
+CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE `User` (
 --
 -- Индексы таблицы `User`
 --
-ALTER TABLE `User`
+ALTER TABLE `user`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `username` (`username`);
 
@@ -55,7 +55,7 @@ ALTER TABLE `User`
 --
 -- AUTO_INCREMENT для таблицы `User`
 --
-ALTER TABLE `User`
+ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
