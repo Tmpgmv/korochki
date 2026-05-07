@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Май 07 2026 г., 11:02
+-- Время создания: Май 07 2026 г., 11:12
 -- Версия сервера: 10.6.20-MariaDB-ubu2004
 -- Версия PHP: 8.2.27
 
@@ -20,6 +20,22 @@ SET time_zone = "+00:00";
 --
 -- База данных: `user_korochki`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `app`
+--
+
+CREATE TABLE `app` (
+  `id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `course_id` int(11) NOT NULL,
+  `start` date NOT NULL,
+  `pament_option` set('Наличными','СБП') NOT NULL DEFAULT 'Наличными',
+  `status` set('Новая','Идет обучение','''Обучение завершено') NOT NULL DEFAULT 'Новая',
+  `feedback` text DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -53,6 +69,14 @@ CREATE TABLE `user` (
 --
 
 --
+-- Индексы таблицы `app`
+--
+ALTER TABLE `app`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `course_id` (`course_id`),
+  ADD KEY `user_id` (`user_id`);
+
+--
 -- Индексы таблицы `course`
 --
 ALTER TABLE `course`
@@ -70,6 +94,12 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT для таблицы `app`
+--
+ALTER TABLE `app`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT для таблицы `course`
 --
 ALTER TABLE `course`
@@ -80,6 +110,17 @@ ALTER TABLE `course`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Ограничения внешнего ключа сохраненных таблиц
+--
+
+--
+-- Ограничения внешнего ключа таблицы `app`
+--
+ALTER TABLE `app`
+  ADD CONSTRAINT `app_ibfk_1` FOREIGN KEY (`course_id`) REFERENCES `course` (`id`),
+  ADD CONSTRAINT `app_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
