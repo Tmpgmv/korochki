@@ -23,10 +23,6 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
---
--- Структура таблицы `app`
---
-
 CREATE TABLE `app` (
   `id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -61,7 +57,7 @@ CREATE TABLE `user` (
   `full_name` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `admin` tinytext NOT NULL DEFAULT '0'
+  `admin` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
