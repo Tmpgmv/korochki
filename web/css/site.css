@@ -86,3 +86,20 @@ a.desc:after {
 .form-group {
     margin-bottom: 1rem;
 }
+
+/* PKGH { */
+@font-face {
+
+  font-family: "Lobster-Regular";
+
+  src: url("/fonts/Lobster-Regular.ttf");
+
+}
+
+.logo {
+
+    font-family: "Lobster-Regular";
+
+}
+
+/* } PKGH */
