@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: localhost:3306
--- Время создания: Май 07 2026 г., 11:02
+-- Время создания: Май 07 2026 г., 15:21
 -- Версия сервера: 10.6.20-MariaDB-ubu2004
 -- Версия PHP: 8.2.27
 
@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- База данных: `user_korochki`
 --
+
+-- --------------------------------------------------------
 
 -- --------------------------------------------------------
 
@@ -45,8 +47,9 @@ CREATE TABLE `user` (
   `full_name` varchar(255) NOT NULL,
   `phone` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
-  `admin` tinytext NOT NULL DEFAULT '0'
+  `admin` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 
 --
 -- Индексы сохранённых таблиц
@@ -69,6 +72,8 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT для сохранённых таблиц
 --
 
+
+
 --
 -- AUTO_INCREMENT для таблицы `course`
 --
@@ -79,9 +84,10 @@ ALTER TABLE `course`
 -- AUTO_INCREMENT для таблицы `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+--
+-- Ограничения внешнего ключа сохраненных таблиц
+--
+
+
