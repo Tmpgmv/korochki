@@ -2,7 +2,6 @@
 
 namespace app\models;
 use yii\web\IdentityInterface;
-
 use Yii;
 
 /**
@@ -14,7 +13,7 @@ use Yii;
  * @property string $full_name
  * @property string $phone
  * @property string $email
- * @property string $admin
+ * @property int $admin
  *
  * @property App[] $apps
  */
@@ -36,9 +35,9 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
     public function rules()
     {
         return [
-            [['admin'], 'default', 'value' => ''0''],
+            [['admin'], 'default', 'value' => 0],
             [['username', 'password', 'full_name', 'phone', 'email'], 'required'],
-            [['admin'], 'string'],
+            [['admin'], 'integer'],
             [['username', 'password', 'full_name', 'phone', 'email'], 'string', 'max' => 255],
             [['username'], 'unique'],
         ];
@@ -159,5 +158,4 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
         return $this->password === $password;
 
     }
-
-}
+}    
