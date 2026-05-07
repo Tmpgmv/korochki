@@ -36,10 +36,26 @@ $this->registerLinkTag(['rel' => 'icon', 'type' => 'image/x-icon', 'href' => Yii
         'brandUrl' => Yii::$app->homeUrl,
         'options' => ['class' => 'navbar-expand-md navbar-dark bg-primary fixed-top']
     ]);
+
+
+    $itemAppLabel = "";
+
+    if (!Yii::$app->user->isGuest) 
+    {
+        if (Yii::$app->user->identity->isAdmin()) 
+        {
+            $itemAppLabel = "Панель управления";
+        } else 
+        {
+            $itemAppLabel = "Заявки";
+        }
+    }
+
+
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav'],
         'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
+            ['label' => $itemAppLabel, 'url' => ['/app']],
             Yii::$app->user->isGuest
                 ? ['label' => 'Login', 'url' => ['/site/login']]
                 : '<li class="nav-item">'
