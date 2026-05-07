@@ -46,12 +46,6 @@ CREATE TABLE `user` (
 --
 
 --
--- Индексы таблицы `course`
---
-ALTER TABLE `course`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Индексы таблицы `user`
 --
 ALTER TABLE `user`
