@@ -33,7 +33,7 @@ CREATE TABLE `app` (
   `course_id` int(11) NOT NULL,
   `start` date NOT NULL,
   `pament_option` set('Наличными','СБП') NOT NULL DEFAULT 'Наличными',
-  `status` set('Новая','Идет обучение','''Обучение завершено') NOT NULL DEFAULT 'Новая',
+  `status` set('Новая','Идет обучение', 'Обучение завершено') NOT NULL DEFAULT 'Новая',
   `feedback` text DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
