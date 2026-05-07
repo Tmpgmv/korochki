@@ -35,9 +35,9 @@ class User extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['admin'], 'default', 'value' => ''0''],
+            [['admin'], 'default', 'value' => 0],
             [['username', 'password', 'full_name', 'phone', 'email'], 'required'],
-            [['admin'], 'string'],
+            [['admin'], 'integer'],
             [['username', 'password', 'full_name', 'phone', 'email'], 'string', 'max' => 255],
             [['username'], 'unique'],
         ];
