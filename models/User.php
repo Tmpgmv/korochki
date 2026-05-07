@@ -1,6 +1,7 @@
 <?php
 
 namespace app\models;
+use yii\web\IdentityInterface;
 
 use Yii;
 
@@ -17,7 +18,7 @@ use Yii;
  *
  * @property App[] $apps
  */
-class User extends \yii\db\ActiveRecord
+class User extends \yii\db\ActiveRecord implements IdentityInterface
 {
 
 
@@ -68,5 +69,53 @@ class User extends \yii\db\ActiveRecord
     {
         return $this->hasMany(App::class, ['user_id' => 'id']);
     }
+
+    // PKGH IdentityInterface {
+    public static function findIdentity($id)
+
+    {
+
+        return static::findOne($id);
+
+    }
+
+
+    public static function findIdentityByAccessToken($token, $type = null)
+
+    {
+
+        return static::findOne(['access_token' => $token]);
+
+    }
+
+
+    public function getId()
+
+    {
+
+        return $this->id;
+
+    }
+
+
+    public function getAuthKey()
+
+    {
+
+      
+
+    }
+
+
+    public function validateAuthKey($authKey)
+
+    {
+
+        
+
+    }   
+    
+
+    // } PKGH IdentityInterface
 
 }
