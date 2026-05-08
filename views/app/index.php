@@ -16,10 +16,12 @@ $this->params['breadcrumbs'][] = $this->title;
 <div class="app-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
-
+    
+    <?php if (!Yii::$app->user->isGuest && !Yii::$app->user->identity->isAdmin()): ?>
     <p>
-        <?= Html::a('Create App', ['create'], ['class' => 'btn btn-success']) ?>
+        <?= Html::a('Новая заявка', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
+    <?php endif ?>
 
     <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
 
