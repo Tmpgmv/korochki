@@ -96,9 +96,8 @@ class App extends \yii\db\ActiveRecord
      */
 
     public function getInfo()
-    {
-
-                return "{$this->user->full_name}: {$this->course->name}, {$this->start} ({$this->status})";
+    {        
+        return "{$this->user->full_name}: {$this->course->name}, {$this->start} ({$this->status})";
 
     }
 
