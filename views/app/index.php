@@ -34,7 +34,8 @@ $this->params['breadcrumbs'][] = $this->title;
             'id',            
             [
                 'attribute' => 'course_id',
-                'content' => function($model){return $model->course->name;}
+                'content' => function($model){return $model->course->name;},
+                'filter' => false,
             ],            
             'start',
             
