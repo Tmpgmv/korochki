@@ -14,7 +14,7 @@ use yii\bootstrap5\ActiveForm;
 
         <?= $form->field($model, 'user_id')->textInput(["type" => "hidden", "value" => Yii::$app->user->identity->id])->label(false) ?>
 
-    <?= $form->field($model, 'course_id')->textInput() ?>
+    <?= $form->field($model, 'course_id')->dropDownList($courses)  ?>
 
     <?= $form->field($model, 'start')->textInput(["type"=>"date", "min"=> date("Y-m-d")]) ?>
 

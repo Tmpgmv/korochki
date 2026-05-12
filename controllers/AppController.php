@@ -3,10 +3,12 @@
 namespace app\controllers;
 
 use app\models\App;
+use app\models\Course;
 use app\models\AppSearch;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\helpers\ArrayHelper;
 
 /**
  * AppController implements the CRUD actions for App model.
@@ -90,7 +92,9 @@ class AppController extends Controller
 
         return $this->render('create', [
             'model' => $model,
-            'paymentOptions' => $this->getPaymentOptions()]);
+            'paymentOptions' => $this->getPaymentOptions(),
+            'courses' => $this->getCourses(),]);
+
     }
 
     /**
@@ -110,7 +114,8 @@ class AppController extends Controller
 
         return $this->render('update', [
             'model' => $model,
-            'paymentOptions' => $this->getPaymentOptions()]);        
+            'paymentOptions' => $this->getPaymentOptions(),
+            ]);        
     }
 
     /**
@@ -151,6 +156,13 @@ class AppController extends Controller
         ];
 
         return $paymentOptions;
+    }
+
+    public function getCourses() {
+        // PKGH Данные для выпадающего списак - курсы.
+        $courses = Course::find()->orderBy("name")->all();        
+        $result = ArrayHelper::map($courses, 'id', 'name');
+        return $result;
     }
 
 }
