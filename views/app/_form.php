@@ -16,7 +16,7 @@ use yii\bootstrap5\ActiveForm;
 
     <?= $form->field($model, 'course_id')->textInput() ?>
 
-    <?= $form->field($model, 'start')->textInput() ?>
+    <?= $form->field($model, 'start')->textInput(["type"=>"date", "min"=> date("Y-m-d")]) ?>
 
     <?= $form->field($model, 'pament_option')->textInput(['maxlength' => true]) ?>
 
