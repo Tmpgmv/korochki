@@ -13,16 +13,18 @@ use yii\bootstrap5\ActiveForm;
     <?php $form = ActiveForm::begin(); ?>
 
     <?php if (!Yii::$app->user->identity->isAdmin()): ?>
+        <?php if ($model->isNewRecord): ?>
+            <?= $form->field($model, 'user_id')->textInput(["type" => "hidden", "value" => Yii::$app->user->identity->id])->label(false) ?>
 
-        <?= $form->field($model, 'user_id')->textInput(["type" => "hidden", "value" => Yii::$app->user->identity->id])->label(false) ?>
+            <?= $form->field($model, 'course_id')->dropDownList($courses)  ?>
 
-        <?= $form->field($model, 'course_id')->dropDownList($courses)  ?>
+            <?= $form->field($model, 'start')->textInput(["type"=>"date", "min"=> date("Y-m-d")]) ?>
 
-        <?= $form->field($model, 'start')->textInput(["type"=>"date", "min"=> date("Y-m-d")]) ?>
+            <?= $form->field($model, 'pament_option')->dropDownList($paymentOptions) ?>    
 
-        <?= $form->field($model, 'pament_option')->dropDownList($paymentOptions) ?>    
-
-        <?= $form->field($model, 'feedback')->textarea(['rows' => 6]) ?>
+        <?php elseif ($model->status == "Обучение завершено"): ?>
+            <?= $form->field($model, 'feedback')->textarea(['rows' => 6]) ?>
+        <?php endif ?>
     
     <?php else: ?>
         <?= $form->field($model, 'status')->textInput(['maxlength' => true]) ?>
