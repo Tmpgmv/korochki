@@ -33,8 +33,14 @@ $this->params['breadcrumbs'][] = $this->title;
         'model' => $model,
         'attributes' => [
             'id',
-            'user_id',
-            'course_id',
+            [
+                'attribute' => 'user_id',
+                'value' => $model->user->full_name,
+            ],
+            [
+                'attribute' => 'course_id',
+                'value' => $model->course->name,
+            ],
             'start',
             'pament_option',
             'status',
