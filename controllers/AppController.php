@@ -90,7 +90,7 @@ class AppController extends Controller
 
         return $this->render('create', [
             'model' => $model,
-        ]);
+            'paymentOptions' => $this->getPaymentOptions()]);
     }
 
     /**
@@ -110,7 +110,7 @@ class AppController extends Controller
 
         return $this->render('update', [
             'model' => $model,
-        ]);
+            'paymentOptions' => $this->getPaymentOptions()]);        
     }
 
     /**
@@ -142,4 +142,15 @@ class AppController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+
+    public function getPaymentOptions() {
+        $paymentOptions = [
+            "Наличными" => "Наличными",
+            "СБП" => "СБП"
+        ];
+
+        return $paymentOptions;
+    }
+
 }

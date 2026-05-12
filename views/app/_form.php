@@ -18,7 +18,7 @@ use yii\bootstrap5\ActiveForm;
 
     <?= $form->field($model, 'start')->textInput(["type"=>"date", "min"=> date("Y-m-d")]) ?>
 
-    <?= $form->field($model, 'pament_option')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'pament_option')->dropDownList($paymentOptions) ?>
 
     <?= $form->field($model, 'status')->textInput(['maxlength' => true]) ?>
 
