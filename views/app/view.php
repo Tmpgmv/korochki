@@ -15,9 +15,10 @@ $this->params['breadcrumbs'][] = $this->title;
 
     <h1><?= Html::encode($this->title) ?></h1>
 
+    <?php $updateText = Yii::$app->user->identity->isAdmin() ? "Сменить статус" : "Оставить отзыв"; ?>
     <p>
         <?php if (Yii::$app->user->identity->isAdmin() || $model->status == "Обучение завершено"): ?>
-            <?= Html::a('Update', ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
+            <?= Html::a($updateText, ['update', 'id' => $model->id], ['class' => 'btn btn-primary']) ?>
         <?php endif ?>
         <?= Html::a('Delete', ['delete', 'id' => $model->id], [
             'class' => 'btn btn-danger',
