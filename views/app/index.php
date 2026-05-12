@@ -31,14 +31,15 @@ $this->params['breadcrumbs'][] = $this->title;
         'rowOptions' => function($model){return ["title" => $model->getInfo()];},
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-
-            'id',
-            'user_id',
-            'course_id',
+            'id',            
+            [
+                'attribute' => 'course_id',
+                'content' => function($model){return $model->course->name;}
+            ],            
             'start',
-            'pament_option',
-            //'status',
-            //'feedback:ntext',
+            
+            'status',
+            
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, App $model, $key, $index, $column) {
