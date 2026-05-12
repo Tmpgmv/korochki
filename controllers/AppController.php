@@ -21,6 +21,17 @@ class AppController extends Controller
         return array_merge(
             parent::behaviors(),
             [
+                'access' => [
+                        'class' => \yii\filters\AccessControl::class,
+                        'rules' => [
+            
+                            [
+                                'allow' => true,
+                                'roles' => ['@'],
+                            ],
+                            // everything else is denied
+                        ],
+        ],
                 'verbs' => [
                     'class' => VerbFilter::className(),
                     'actions' => [
