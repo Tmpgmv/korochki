@@ -25,7 +25,10 @@ use yii\bootstrap5\ActiveForm;
     <?= $form->field($model, 'admin')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
+        <?= Html::submitButton('Создать пользователя', ['class' => 'btn btn-success']) ?>        
+    </div>
+    <div>
+        <?= Html::a('Уже есть пользователь', ['/site/login']) ?>
     </div>
 
     <?php ActiveForm::end(); ?>
