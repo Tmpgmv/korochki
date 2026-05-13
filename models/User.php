@@ -50,9 +50,9 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
     {
         return [
             'id' => 'ID',
-            'username' => 'Логин',
-            'password' => 'Пароль',
-            'full_name' => 'ФИО',
+            'username' => 'Логин (латиница и цифры, не менее 6 символов)',
+            'password' => 'Пароль (минимум 8 символов)',
+            'full_name' => 'ФИО (кириллица и пробелы)',
             'phone' => 'Телефон',
             'email' => 'Адрес электронной почты',
             'admin' => 'Admin',
