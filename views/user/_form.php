@@ -22,8 +22,6 @@ use yii\bootstrap5\ActiveForm;
 
     <?= $form->field($model, 'email')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'admin')->textInput() ?>
-
     <div class="form-group">
         <?= Html::submitButton('Создать пользователя', ['class' => 'btn btn-success']) ?>        
     </div>
