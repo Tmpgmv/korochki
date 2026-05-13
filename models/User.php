@@ -41,6 +41,7 @@ class User extends \yii\db\ActiveRecord implements IdentityInterface
             ['full_name', 'match', 'pattern' => '/^[а-яё\s]+$/iu', 'message' => 'Кириллица и пробелы'],
             [['password'], 'string', 'min' => 8],
             [['admin'], 'integer'],
+            ['email', 'email'],
             [['username', 'password', 'full_name', 'phone', 'email'], 'string', 'max' => 255],
             
             [['username'], 'unique'],
