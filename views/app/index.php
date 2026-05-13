@@ -10,7 +10,7 @@ use kartik\grid\GridView;
 /** @var app\models\AppSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Apps';
+$this->title = 'Заявки';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="app-index">
