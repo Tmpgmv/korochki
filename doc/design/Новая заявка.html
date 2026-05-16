@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)http://user.wsr.ru/app/create -->
+<html lang="ru-RU" class="h-100"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Новая заявка</title>
+    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="1ipLT6xgxO7vYhqMB0DHp1TQSQ1IEXKKJ7WlE7FHnma0eiYj1QKp1q5QcPhTD7b_DukAVy9eNd9mhtRJ-h7MXw==">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link type="image/x-icon" href="http://user.wsr.ru/favicon.ico" rel="icon">
+<link href="./Новая заявка_files/animate.min.css" rel="stylesheet">
+<link href="./Новая заявка_files/bootstrap.css" rel="stylesheet">
+<link href="./Новая заявка_files/site.css" rel="stylesheet"></head>
+<body class="d-flex flex-column h-100">
+
+<header id="header">
+    <nav id="w1" class="navbar-expand-md navbar-dark bg-primary fixed-top navbar">
+<div class="container">
+<a class="animate__animated animate__bounce navbar-brand" href="http://user.wsr.ru/"><img class="me-1" src="./Новая заявка_files/logo.png" width="65" alt="My logo"><span class="logo">Корочки.есть</span></a>
+<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#w1-collapse" aria-controls="w1-collapse" aria-expanded="false" aria-label="Переключить навигацию"><span class="navbar-toggler-icon"></span></button>
+<div id="w1-collapse" class="collapse navbar-collapse">
+<ul id="w2" class="navbar-nav nav"><li class="nav-item"><a class="nav-link" href="http://user.wsr.ru/app">Заявки</a></li>
+<li class="nav-item"><form action="http://user.wsr.ru/site/logout" method="post">
+<input type="hidden" name="_csrf" value="1ipLT6xgxO7vYhqMB0DHp1TQSQ1IEXKKJ7WlE7FHnma0eiYj1QKp1q5QcPhTD7b_DukAVy9eNd9mhtRJ-h7MXw=="><button type="submit" class="nav-link btn btn-link logout">Выход (user)</button></form></li></ul></div>
+</div>
+</nav></header>
+
+<main id="main" class="flex-shrink-0" role="main">
+    <div class="container">
+                <div class="app-create">
+
+    <h1>Новая заявка</h1>    
+    
+<div class="app-form">
+
+    <form id="w0" action="http://user.wsr.ru/app/create" method="post">
+<input type="hidden" name="_csrf" value="1ipLT6xgxO7vYhqMB0DHp1TQSQ1IEXKKJ7WlE7FHnma0eiYj1QKp1q5QcPhTD7b_DukAVy9eNd9mhtRJ-h7MXw==">
+                        <div class="mb-3 field-app-user_id required">
+
+<input type="hidden" id="app-user_id" class="form-control" name="App[user_id]" value="1" aria-required="true">
+
+<div class="invalid-feedback"></div>
+</div>
+            <div class="mb-3 field-app-course_id required">
+<label class="form-label" for="app-course_id">ID курса</label>
+<select id="app-course_id" class="form-select" name="App[course_id]" aria-required="true">
+<option value="1">Основы алгоритмизации и программирования</option>
+<option value="2">Основы веб-дизайна</option>
+<option value="3">Основы проектирования баз данных</option>
+</select>
+
+<div class="invalid-feedback"></div>
+</div>
+            <div class="mb-3 field-app-start required">
+<label class="form-label" for="app-start">Дата начала обучения</label>
+<input type="date" id="app-start" class="form-control" name="App[start]" min="2026-05-16" aria-required="true">
+
+<div class="invalid-feedback"></div>
+</div>
+            <div class="mb-3 field-app-pament_option">
+<label class="form-label" for="app-pament_option">Способ оплаты</label>
+<select id="app-pament_option" class="form-select" name="App[pament_option]">
+<option value="Наличными" selected="">Наличными</option>
+<option value="СБП">СБП</option>
+</select>
+
+<div class="invalid-feedback"></div>
+</div>    
+
+            
+    
+    <div class="form-group">
+        <button type="submit" class="btn btn-success">Отправить</button>    </div>
+
+    </form>
+</div>
+
+</div>
+    </div>
+</main>
+
+<footer id="footer" class="mt-auto py-3 bg-light">
+    <div class="container">
+        <div class="row text-muted">
+            <div class="col-md-6 text-center text-md-start">© Корочки.есть 2026</div>            
+        </div>
+    </div>
+</footer>
+
+<script src="./Новая заявка_files/jquery.js.Без названия"></script>
+<script src="./Новая заявка_files/yii.js.Без названия"></script>
+<script src="./Новая заявка_files/yii.validation.js.Без названия"></script>
+<script src="./Новая заявка_files/yii.activeForm.js.Без названия"></script>
+<script src="./Новая заявка_files/bootstrap.bundle.js.Без названия"></script>
+<script>jQuery(function ($) {
+jQuery('#w0').yiiActiveForm([{"id":"app-user_id","name":"user_id","container":".field-app-user_id","input":"#app-user_id","error":".invalid-feedback","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «ID пользователя»."});yii.validation.number(value, messages, {"pattern":/^[+-]?\d+$/,"message":"Значение «ID пользователя» должно быть целым числом.","skipOnEmpty":1});}},{"id":"app-course_id","name":"course_id","container":".field-app-course_id","input":"#app-course_id","error":".invalid-feedback","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «ID курса»."});yii.validation.number(value, messages, {"pattern":/^[+-]?\d+$/,"message":"Значение «ID курса» должно быть целым числом.","skipOnEmpty":1});}},{"id":"app-start","name":"start","container":".field-app-start","input":"#app-start","error":".invalid-feedback","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Дата начала обучения»."});}},{"id":"app-pament_option","name":"pament_option","container":".field-app-pament_option","input":"#app-pament_option","error":".invalid-feedback","validate":function (attribute, value, messages, deferred, $form) {yii.validation.string(value, messages, {"message":"Значение «Способ оплаты» должно быть строкой.","skipOnEmpty":1});}}], {"errorSummary":".alert.alert-danger","errorCssClass":"is-invalid","successCssClass":"is-valid","validationStateOn":"input"});
+});</script>
+
+</body></html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- saved from url=(0029)http://user.wsr.ru/site/login -->
+<html lang="ru-RU" class="h-100"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Вход</title>
+    <meta name="csrf-param" content="_csrf">
+<meta name="csrf-token" content="9mwRYvLruSuYYaKMy236LNhtHkv31tqDXPyTJwi62Ou0LX4yxbjeGcEMmt6TCJV-sFhmJsaHreEmsKEWMODtpw==">
+
+
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link type="image/x-icon" href="http://user.wsr.ru/favicon.ico" rel="icon">
+<link href="./Вход_files/animate.min.css" rel="stylesheet">
+<link href="./Вход_files/bootstrap.css" rel="stylesheet">
+<link href="./Вход_files/site.css" rel="stylesheet"></head>
+<body class="d-flex flex-column h-100">
+
+<header id="header">
+    <nav id="w0" class="navbar-expand-md navbar-dark bg-primary fixed-top navbar">
+<div class="container">
+<a class="animate__animated animate__bounce navbar-brand" href="http://user.wsr.ru/"><img class="me-1" src="./Вход_files/logo.png" width="65" alt="My logo"><span class="logo">Корочки.есть</span></a>
+<button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#w0-collapse" aria-controls="w0-collapse" aria-expanded="false" aria-label="Переключить навигацию"><span class="navbar-toggler-icon"></span></button>
+<div id="w0-collapse" class="collapse navbar-collapse">
+<ul id="w1" class="navbar-nav nav"><li class="nav-item"><a class="nav-link" href="http://user.wsr.ru/app"></a></li>
+<li class="nav-item"><a class="nav-link active" href="http://user.wsr.ru/site/login">Вход</a></li></ul></div>
+</div>
+</nav></header>
+
+<main id="main" class="flex-shrink-0" role="main">
+    <div class="container">
+                <div class="site-login">
+    <h1>Вход</h1>
+
+    <div class="row">
+        <div class="col-lg-5">
+
+            <form id="login-form" action="http://user.wsr.ru/site/login" method="post">
+<input type="hidden" name="_csrf" value="9mwRYvLruSuYYaKMy236LNhtHkv31tqDXPyTJwi62Ou0LX4yxbjeGcEMmt6TCJV-sFhmJsaHreEmsKEWMODtpw==">
+            <div class="mb-3 field-loginform-username required">
+<label class="col-lg-1 col-form-label mr-lg-3" for="loginform-username">Логин</label>
+<input type="text" id="loginform-username" class="col-lg-3 form-control is-invalid" name="LoginForm[username]" autofocus="" aria-required="true" aria-invalid="true">
+<div class="col-lg-7 invalid-feedback">Необходимо заполнить «Логин».</div>
+</div>
+            <div class="mb-3 field-loginform-password required">
+<label class="col-lg-1 col-form-label mr-lg-3" for="loginform-password">Пароль</label>
+<input type="password" id="loginform-password" class="col-lg-3 form-control" name="LoginForm[password]" value="" aria-required="true">
+<div class="col-lg-7 invalid-feedback"></div>
+</div>
+            <div class="mb-3 field-loginform-rememberme">
+<div class="custom-control custom-checkbox"><input type="hidden" name="LoginForm[rememberMe]" value="0"><input type="checkbox" id="loginform-rememberme" class="form-check-input" name="LoginForm[rememberMe]" value="1" checked=""> <label class="form-check-label" for="loginform-rememberme">Запомнить</label></div>
+<div class="col-lg-8"><div class="col-lg-7 invalid-feedback"></div></div>
+</div>
+            <div class="form-group">
+                <div>
+                    <button type="submit" class="btn btn-primary" name="login-button">Вход</button>                </div>
+            </div>
+
+            </form>
+            <div style="color:#999;">
+                <a href="http://user.wsr.ru/user/create">Еще не зарегистрированы? Регистрация</a>            </div>
+
+        </div>
+    </div>
+</div>
+    </div>
+</main>
+
+<footer id="footer" class="mt-auto py-3 bg-light">
+    <div class="container">
+        <div class="row text-muted">
+            <div class="col-md-6 text-center text-md-start">© Корочки.есть 2026</div>            
+        </div>
+    </div>
+</footer>
+
+<script src="./Вход_files/jquery.js.Без названия"></script>
+<script src="./Вход_files/yii.js.Без названия"></script>
+<script src="./Вход_files/yii.validation.js.Без названия"></script>
+<script src="./Вход_files/yii.activeForm.js.Без названия"></script>
+<script src="./Вход_files/bootstrap.bundle.js.Без названия"></script>
+<script>jQuery(function ($) {
+jQuery('#login-form').yiiActiveForm([{"id":"loginform-username","name":"username","container":".field-loginform-username","input":"#loginform-username","error":".col-lg-7.invalid-feedback","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Логин»."});}},{"id":"loginform-password","name":"password","container":".field-loginform-password","input":"#loginform-password","error":".col-lg-7.invalid-feedback","validate":function (attribute, value, messages, deferred, $form) {yii.validation.required(value, messages, {"message":"Необходимо заполнить «Пароль»."});}},{"id":"loginform-rememberme","name":"rememberMe","container":".field-loginform-rememberme","input":"#loginform-rememberme","error":".col-lg-7.invalid-feedback","validate":function (attribute, value, messages, deferred, $form) {yii.validation.boolean(value, messages, {"trueValue":"1","falseValue":"0","message":"Значение «Запомнить» должно быть равно «1» или «0».","skipOnEmpty":1});}}], {"errorSummary":".alert.alert-danger","errorCssClass":"is-invalid","successCssClass":"is-valid","validationStateOn":"input"});
+});</script>
+
+</body></html>
