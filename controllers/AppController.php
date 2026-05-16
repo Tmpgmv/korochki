@@ -9,6 +9,7 @@ use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use yii\helpers\ArrayHelper;
+use Yii;
 
 /**
  * AppController implements the CRUD actions for App model.
@@ -141,7 +142,14 @@ class AppController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = App::findOne(['id' => $id])) !== null) {
+        $query = App::find()->where(['id' => $id]);
+
+        // If NOT an admin, restrict the query to only records owned by the user
+        if (!Yii::$app->user->identity->isAdmin()) {
+            $query->andWhere(['user_id' => Yii::$app->user->id]);
+        }
+
+        if (($model = $query->one()) !== null) {
             return $model;
         }
 
