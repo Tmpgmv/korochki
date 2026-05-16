@@ -5,6 +5,7 @@ namespace app\models;
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
 use app\models\App;
+use Yii;
 
 /**
  * AppSearch represents the model behind the search form of `app\models\App`.
@@ -42,6 +43,12 @@ class AppSearch extends App
     public function search($params, $formName = null)
     {
         $query = App::find();
+        
+        // PKGH Пользователь видит только свои заявки.
+        // Администратор - все.
+        if (!Yii::$app->user->identity->isAdmin()) {
+            $query->andWhere(['user_id' => Yii::$app->user->id]);
+        }
 
         // add conditions that should always apply here
 
