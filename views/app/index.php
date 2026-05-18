@@ -5,19 +5,22 @@ use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use kartik\grid\GridView;
+use Yii;
 
 /** @var yii\web\View $this */
 /** @var app\models\AppSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Заявки';
+$title = (Yii::$app->user->identity->isAdmin() ? "Панель управления: заявки": "Заявки");
+
+$this->title = $title;
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="app-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
     
-    <?php if (!Yii::$app->user->isGuest && !Yii::$app->user->identity->isAdmin()): ?>
+    <?php if (Yii::$app->user->identity->isAdmin()): ?>
     <p>
         <?= Html::a('Новая заявка', ['create'], ['class' => 'btn btn-success']) ?>
     </p>
