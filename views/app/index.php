@@ -10,7 +10,9 @@ use kartik\grid\GridView;
 /** @var app\models\AppSearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
-$this->title = 'Заявки';
+$title = (Yii::$app->user->identity->isAdmin() ? "Панель управления: заявки": "Заявки");
+
+$this->title = $title;
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 <div class="app-index">
