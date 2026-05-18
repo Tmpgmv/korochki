@@ -9,9 +9,10 @@ use yii\bootstrap5\ActiveForm;
 ?>
 
 <div class="user-form">
+ 
+    <?php $form = ActiveForm::begin(['errorCssClass' => 'is-invalid animate__animated animate__bounce',]); ?>
 
-    <?php $form = ActiveForm::begin(); ?>
-
+    
     <?= $form->field($model, 'username')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'password')->passwordInput(['maxlength' => true]) ?>
@@ -34,3 +35,4 @@ use yii\bootstrap5\ActiveForm;
     <?php ActiveForm::end(); ?>
 
 </div>
+
